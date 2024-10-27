@@ -1,0 +1,202 @@
+/* Container */
+.earthfi-insane-loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 85vh;
+    background: radial-gradient(circle, #001730, #000000); /* Dark galaxy feel */
+    overflow: hidden;
+    position: relative;
+  }
+  
+  /* Loader Core Structure */
+  .earthfi-insane-loader {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    transform-style: preserve-3d;
+  }
+  
+  /* Background Glow Waves */
+  .background-waves {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(66, 153, 225, 0.1), rgba(255, 255, 255, 0));
+    animation: wave-pulse 3s infinite ease-in-out;
+    z-index: 1;
+    filter: blur(30px);
+  }
+  
+  /* Outer 3D Rotating Circle */
+  .outer-circle {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border: 3px solid rgba(72, 187, 120, 0.4); /* Glowing green */
+    border-radius: 50%;
+    animation: rotate-outer 5s infinite linear;
+    z-index: 2;
+    box-shadow: 0 0 20px rgba(72, 187, 120, 0.6);
+  }
+  
+  /* Middle Neon Circle */
+  .middle-circle {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border: 2px dashed rgba(72, 187, 120, 0.6);
+    border-radius: 50%;
+    animation: rotate-middle 4s infinite ease-in-out;
+    z-index: 3;
+    box-shadow: 0 0 30px rgba(66, 153, 225, 0.8);
+  }
+  
+  /* Inner Circle with 3D Rotation */
+  .inner-circle {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    animation: rotate-inner 6s infinite ease-in-out;
+    z-index: 4;
+  }
+  
+  /* Glowing Core */
+  .core {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    animation: core-pulse 2s infinite ease-in-out;
+  }
+  
+  /* Core Glow */
+  .core-glow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(72, 187, 120, 0.7), rgba(0, 78, 146, 0.3));
+    animation: glow-pulse 2s infinite ease-in-out;
+    filter: blur(10px);
+  }
+  
+  /* Inner Core */
+  .core-inner {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #48bb78; /* Neon green EarthFi core */
+    border-radius: 50%;
+    box-shadow: 0 0 50px rgba(72, 187, 120, 1);
+  }
+  
+  /* Particle Trails */
+  .particle-trail {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    animation: particles 8s infinite linear;
+    z-index: 1;
+  }
+  
+  .particle-trail::before, .particle-trail::after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: rgba(66, 153, 225, 0.6);
+    top: 50%;
+    left: 50%;
+    box-shadow: 
+      10px 10px 20px rgba(255, 255, 255, 0.6),
+      -10px -10px 30px rgba(255, 255, 255, 0.8);
+  }
+  
+  /* Animations */
+  
+  /* Background wave expansion */
+  @keyframes wave-pulse {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1.5);
+    }
+  }
+  
+  /* Outer Circle 3D Rotation */
+  @keyframes rotate-outer {
+    0% {
+      transform: rotateX(0deg) rotateY(0deg);
+    }
+    100% {
+      transform: rotateX(360deg) rotateY(360deg);
+    }
+  }
+  
+  /* Middle Circle Rotation */
+  @keyframes rotate-middle {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Inner Circle Rotation */
+  @keyframes rotate-inner {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Core Glowing Pulse */
+  @keyframes core-pulse {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.3);
+    }
+  }
+  
+  /* Core Glow Pulse */
+  @keyframes glow-pulse {
+    0% {
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /* Particle Trail Movement */
+  @keyframes particles {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
